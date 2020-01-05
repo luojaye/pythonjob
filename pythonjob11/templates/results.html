@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>pythonjob</title>
+    <link rel="stylesheet" href="/static/layui-v2.5.5/layui/css/layui.css"  media="all">
+</head>
+<body style="background-color:#E0FFFF;">
+
+<div style="width:100%">
+    <div style="width:70%;margin:auto">
+        {{ the_tittle|safe }}
+    </div>
+</div>
+<div style="text-align:center;margin-top: 50px;margin-bottom: 50px;">
+    <form method="POST" action="/"  class="layui-form">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <select name="the_region_selected">
+                    <option value="picture1">人口密度地图</option>
+                    <option value="picture5">动态可视化图</option>
+                </select>
+            </div>
+        </div>
+    <input value='Check' type='SUBMIT' class="layui-btn">
+    </form>
+</div>
+<div style="width:100%">
+    <div style="width:900px;margin:auto;padding-top: 30px;">
+        {{ the_tit|safe }}
+        {{ the_plot_all1|safe }}
+        {{ the_plot_all2|safe }}
+    </div>
+</div>
+    
+
+<div style="width:100%">
+    <div style="width:70%;margin:auto">
+        {{ the_describe|safe }}
+    </div>
+</div>
+{{the_res|safe}}
+
+<script src="/static/layui-v2.5.5/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'upload', 'layer'], function () {
+
+     var form = layui.form,$ = layui.$;
+
+     $.ajax({
+         url: '/getSelect',
+         dataType: 'json',
+         type: 'get',
+         success: function (data) {
+             $.each(data, function (index, item) {
+                 $('#the_region_selected').append(new Option(item,index));// 下拉菜单里添加元素
+             });
+             layui.form.render("select");
+         }
+     })
+
+    //检查项目添加到下拉框中
+
+ })
+</script>
+
+</body>
+</html>
