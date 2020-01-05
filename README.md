@@ -11,7 +11,7 @@
 17级同学负责制作交互化视图，提供数据以及数据故事。
 ## 项目主题：  
 通过分析不同地区的人口密度情况并提出某些改进建
-* 项目展示：[pythonjob]()  
+* 项目展示：[pythonjob](http://jiayiluo.pythonanywhere.com/)  
 * 项目GitHub仓库：[pythonjob仓库](https://github.com/luojaye/pythonjob)  
 * 项目数据：most population.csv 和 city populations.csv  
 ## 项目内容：
